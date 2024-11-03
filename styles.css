@@ -1,0 +1,899 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+.montserrat-in {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 299;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'CorporateA';
+    src: url('Mercedes_animation-testing/Mercedes Benz.ttf') format('truetype');
+    font-style: normal;
+  }
+
+/* website grid layout system */
+
+.homepage-grid-layout-system {
+    display: grid;
+    grid-template-columns: 120px repeat(16, 1fr) 120px; /* 120px space on both sides, 10 equal content columns */
+    gap: 20px; /* Space between content columns */
+    width: 100%; /* Full viewport width */
+    height: auto; /* Height adjusts based on content */
+    row-gap: 0;
+}
+
+:root {
+    --main-text-color: #FFFFFF;
+    --sub-text-color: #171717;
+    --navSide-fontSize: 12px;
+    --navbar-opacity: 0.7;
+    --teaser-tiles-text-margin: 10px;
+    --teaser-tiles-image-margin: 10px;
+    --dark-text-color: black;
+}
+
+
+/* navbar */
+
+.navbar {
+    position: fixed;    
+    width: 100%;
+    height: auto;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.navbar-logo-container {
+    position: relative;
+    background-color: black;
+    z-index: 1;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-left-content {
+    position: absolute;
+    top: 0;
+    margin-left: 20px;
+    margin-top: 6px;
+    width: auto;
+    height: auto;
+    color: var(--main-text-color);
+    font-size: var(--navSide-fontSize);
+    display: flex;
+}
+
+.language-change {
+    opacity: 0.7;
+}
+
+.privacy-wrapper {
+    opacity: 0.7;
+    margin-left: 25px;
+}
+
+.navbar-right-content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: 30px;
+    margin-top: 6px;
+    font-size: var(--navSide-fontSize);
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.search-box {
+    opacity: var(--navbar-opacity);
+}
+
+
+.search-box {
+    opacity: var(--navbar-opacity);
+}
+
+.search-box .fa-magnifying-glass {
+    transform: rotate(90deg);
+}
+
+.login-box {
+    opacity: var(--navbar-opacity);
+    margin-left: 20px;
+}
+
+.login-box .arrow-down {
+    transform: rotate(180deg);
+}
+
+
+.navbar-navigation_main {
+    position: absolute;
+    background-color: black;
+    top: 100%;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    opacity: 0.9;
+}
+
+.navigation-item {
+    color: var(--main-text-color);
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* layout-containers */
+
+.video__container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    grid-column: 1 / -1;
+    z-index: -1;
+    display: flex;
+    display: grid;
+}
+
+.hero-text-wrapper {
+    position: absolute;
+    top: 450px;
+    height: auto;
+    width: auto;
+    margin-left: 120px;
+    overflow: hidden;
+}
+.sub-header-wrapper {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.hero-header {
+    font-size: 36px;
+    width: 450px;
+    color: white;
+    font-weight: 50;
+}
+
+.hero-promotion {
+    margin-top: 30px;
+    color: var(--main-text-color);
+    font-size: 18px;
+    font-weight: 50;
+}
+
+.discover_button {  
+    border-radius: 15px;
+    margin-top: 12px;
+    font-size: 14px;
+    height: 25px;
+    padding: 6.5px 22px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.discover_button:hover {
+    background-color: #0078d6;
+}
+
+.hero_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.teaser-tiles__container {
+    position: relative;
+    padding-top: 128px;
+    padding-bottom: 78px;
+    grid-column: 2 / -2;
+    height: 2616px;
+}
+
+.brandhub-editorial-magazine__container {
+    position: relative;
+    grid-column: 1 / -1;
+    height: 758px;
+    background-color: black;
+}
+
+.social-media__container {
+    position: relative;
+    height: 438px;
+    grid-column: 1 / -1;  
+}
+
+.brandhub-purchases-services__container {
+    position: relative;
+    height: 2000px;
+    grid-column: 1 / -1;
+    background-color: black;
+}
+
+.mercedes-footer__container {
+    position: relative;
+    grid-column: 1 / -1;
+    height: auto;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 120px repeat(16, 1fr) 120px;
+}
+
+.footer-sitemap__container {
+    position: relative;
+    grid-column: 2 / -2;
+    width: 100%;
+    height: 450px;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom: 0.8px solid #333;
+    border-top: 0.8px solid #333;
+}
+
+.footer-notes__container {
+    position: relative;
+    grid-column: 2 / -2;
+    height: 197px;
+    border-bottom: 0.8px solid #333;
+    display: flex;
+    align-items: center;
+}
+
+.footer-navigation__container {
+    position: relative;
+    grid-column: 2 / -2;
+    height: 286px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-logo__container {
+    position: relative;
+    grid-column: 1 / -1;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+
+svg {
+    width: 100%;
+    height: 65%;
+}
+
+
+/* teaser-tiles */
+
+.teaser-tiles-grid-layout {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 528px 672px;
+    grid-template-rows: auto;
+    column-gap: 150px;
+    padding: 0px 30px;
+    row-gap: 40px;
+    grid-template-areas: 
+        "innovation_small art"
+        "vehicles_small art"
+        "innovation_large art"
+        "innovation_large zeitgeist";
+}
+
+
+.innovation-small__container { grid-area: innovation_small; }
+.vehicles-small__container { grid-area: vehicles_small; }
+.innovation-large__container { grid-area: innovation_large; }
+.art-extra-large__container { grid-area: art; }
+.zeitgeist__container { grid-area: zeitgeist; }
+
+.innovation-small__container {
+    position: relative;
+    width: 528px;
+    height: 421px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+.vehicles-small__container {
+    position: relative;
+    width: 528px;
+    height: 421px;
+    overflow: hidden;
+}
+
+.innovation-large__container {
+    position: relative;
+    width: 528px;
+    height: 928px;
+    bottom: 20px;
+    overflow: hidden;
+}
+
+.art-extra-large__container {
+    top: 280px;
+    position: relative;
+    width: 672px;
+    height: 1076px;
+    overflow: hidden;
+}
+
+.zeitgeist-medium__container {  
+    position: relative;
+    width: 672px;
+    height: 502px;
+    bottom: 90px;
+    overflow: hidden;
+}
+
+.teaser-tiles-header {
+    color: var(--dark-text-color);
+    font-size: 28px;
+}
+
+.teaser-tiles-subtext {
+    color: var(--dark-text-color);
+    font-size: 14px;
+}
+
+.teaser-tiles-subtext:first-child {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.innovation-small__container img:first-child {
+    margin-top: 50px;
+}
+
+.vehicles-information {
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+}
+
+.teaser-tile-images {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.innovation-small__container img:nth-of-type(1) {
+    margin-top: 35px;
+}
+
+.zeitgeist-medium__container img:nth-of-type(1) {
+    margin-top: 36px;
+}
+
+.brandhub-editorial-grid-layout {
+    display: grid;
+    grid-template-columns: 120px 5fr 7fr 120px;
+    grid-template-rows: auto;
+    padding: 128px 0px;
+    height: 100%;
+}
+
+.editorial-text-wrapper {
+    position: relative;
+    grid-column: 2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+
+.editorial-main-information {
+    position: relative;
+    width: auto;
+    height: auto;
+    color: white;
+}
+
+.editorial-main-information .editorial-magazine {
+    font-size: 12px;
+    font-weight: 100;
+    margin-bottom: 45px;
+}
+
+.editorial-main-information .editorial-header-text {
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+.editorial-more-information-wrapper {
+    position: relative;
+    width: auto;
+    height: auto;
+    color: white;
+}
+
+.editorial-more-information-wrapper .editorial-paragraph {
+    font-size: 14px;
+    line-height: 1.8;   
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+.editorial-magazine-image-wrapper {
+    grid-column: 3;
+    position: relative;
+    padding-left: 120px;
+}
+
+.social-media-box-content-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.social-media-header {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 75px;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 150px;
+    width: auto;
+}
+
+.social-media-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 2rem;
+}
+
+.brandhub-purchase-text-wrapper {
+    position: sticky;
+    margin: 350px 120px;
+    top: 50%;
+    width: 400px;
+    height: auto;
+    color: white;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchases-header {
+    position: relative;
+    width: 230px;
+    height: auto;
+    font-size: 40px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.purchase-links {
+    position: relative;
+}
+
+.purchase_link {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.sitemap-header {
+    margin-right: 40px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.company-list {
+    list-style: none;
+    opacity: 0.7;
+    height: auto;
+    margin-right: 40px;
+}
+
+.knowledge-list {
+    list-style: none;
+    opacity: 0.7;
+    height: auto;
+    margin-right: 40px;
+}
+
+.business-list {
+    list-style: none;
+    opacity: 0.7;
+    height: auto;
+    margin-right: 40px;
+}   
+
+.knowledge-list-item {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.business-list-item {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.company-list-item {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.company-list:nth-child(1) {
+    opacity: 1;
+}
+.knowledge-list:nth-child(1) {
+    opacity: 1;
+}
+
+.business-list:nth-child(1) {
+    opacity: 1;
+}
+
+.footer_notes {
+    color: white;
+    font-size: 10px;
+    line-height: 1.6;
+    opacity: 0.7;
+}
+
+.copyright-list {
+    margin-top: 60px;
+    display: flex;
+    list-style: none;
+    color: white;
+    opacity: 0.7;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.copyright-list-item {
+    font-size: 11px;
+}
+
+.language-change {
+    font-size: 12px;
+    color: white;
+}
+
+.langauge-change-english {
+    font-size: 12px;
+    color: white;
+}
+
+.footer-logo-image {
+    margin-top: 50px;
+    width: 266px;
+    height: 162px;
+}
+
+/* animation classes */
+
+.slideIn_center {
+    animation: slideIn_center 1.2s ease forwards;
+}   
+
+.slideOut_center {
+    animation: slideOut_center 1.2s ease forwards;
+}   
+
+.slideOut_center-text {
+    animation: slideOut_center-text 1.2s ease forwards;
+}
+
+.slideIn_center-text {
+    animation: slideIn_center-text 1.2s ease forwards;
+}
+
+.expand_center {
+    animation: expand_center 1.2s ease forwards;
+}
+
+.shrink_center {
+    animation: shrink_center 1.2s ease forwards;
+}
+
+
+/* keyframes */
+
+
+/* center sliding */
+@keyframes slideIn_center {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slideIn_center-text {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.9;
+    }
+}
+
+@keyframes slideOut_center {
+    from {
+        transform: translateY(-100%);
+        
+    }
+    to {
+        transform: translateY(0);    
+    }
+}
+
+@keyframes slideOut_center-text {
+    from {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes expand_center {
+    from {
+        height: 65px;
+        font-size: 12px;
+    }
+    to {
+        height: 90px;
+        font-size: 16px;
+    }
+}
+
+@keyframes shrink_center {
+    from {
+        height: 80px;
+    }
+    to {
+        height: 65px;
+    }
+}
+
+.teaser-tile-image-wrapper {
+    overflow: hidden;
+}
+
+
+.imageReveal_image {
+     animation: imageReveal_image 1.2s ease forwards;
+}
+
+.slideOut-vertical_text span{
+    display: inline-block;
+    animation: slideOut-vertical_text 1.2s ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes imageReveal_image{
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}   
+
+@keyframes slideIn-vertical_text {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut-vertical_text {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideOut-vertical_text {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0.5;
+    }
+}
+
+@keyframes fadeIn_icon {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn_icon {
+    animation: fadeIn_icon 1.2s ease forwards;
+}
+
+.slideIn-vertical_text {
+    animation: slideIn-vertical_text 1.2s ease forwards;
+    animation-delay: 1s;
+}
+
+.slideIn-vertical_text span{
+    animation: slideIn-vertical_text 1.2s ease forwards;
+    display: inline-block;
+}
+
+.innovation-small-teaser-tile-image-wrapper {
+    position: relative;
+    width: 528px;
+    height: 297px;
+}
+
+.innovation-large-teaser-tile-image-wrapper {
+    position: relative;
+    width: 528px;
+    height: 704px;
+}
+
+.vehicles-small-teaser-tile-image-wrapper {
+    position: relative;
+    width: 528px;
+    height: 297px;
+}
+
+.zeitgeist-medium-teaser-tile-image-wrapper {
+    position: relative;
+    width: 672px;
+    height: 378px;
+}
+
+.art-large-teaser-tile-image-wrapper {
+    position: relative;
+    width: 672px;
+    height: 896px;
+}
+
+.teaser-tile-images:hover{
+    transform: scale(1.1);
+}
+
+.slideIn-vertical_text span:nth-child(1) { animation-delay: 0s; }
+.slideIn-vertical_text span:nth-child(2) { animation-delay: .1s; }
+.slideIn-vertical_text span:nth-child(3) { animation-delay: .2s; }
+.slideIn-vertical_text span:nth-child(4) { animation-delay: .3s; }
+.slideIn-vertical_text span:nth-child(5) { animation-delay: .4s; }
+.slideIn-vertical_text span:nth-child(6) { animation-delay: .5s; }
+
+.purchaes-header .brandhuhPurchase {
+    opacity: 0.7;
+}
+
+.purchase-wrapper {
+    position: relative;
+    width: 230px;
+    height: 49px;
+    overflow-y: hidden;
+}
+
+.service-wrapper {
+    position: relative;
+    width: 230px;   
+    height: 49px;
+    overflow: hidden;
+}
+
+.brandhub-purchase-services {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes expand_center{
+    from {
+        height: 55px;
+    }
+    to {
+        height: 150px;
+    }
+}
+@keyframes shrink_center{
+    from {
+        height: 150px;
+    }
+    to {
+        height: 55px;;
+    }
+}
+
+.expand_center {
+    animation: expand_center 1.4s ease forwards;
+    animation-delay: 2s;
+}
+
+.shrink_center {
+    animation: shrink_center 1.4s ease forwards;
+    animation-delay: 2s;
+}
+
+.slideIn-horizontal_text a{
+    animation: slideIn-horizontal_text 1.2s ease forwards;
+    animation-iteration-count: infinite;
+}
+@keyframes slideIn-horizontal_text {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideIn-vertical_navside {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+.slideIn-vertical_navside {
+    animation: slideIn-vertical_navside 1.2s ease forwards;
+}
+
+
+
