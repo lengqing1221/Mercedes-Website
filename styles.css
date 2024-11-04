@@ -360,11 +360,14 @@ svg {
 .teaser-tiles-header {
     color: var(--dark-text-color);
     font-size: 28px;
+    opacity: 0;
+    overflow-y: hidden;
 }
 
 .teaser-tiles-subtext {
     color: var(--dark-text-color);
     font-size: 14px;
+    opacity: 0;
 }
 
 .teaser-tiles-subtext:first-child {
@@ -765,12 +768,12 @@ svg {
 }
 
 .fadeIn_icon {
-    animation: fadeIn_icon 1.2s ease forwards;
+    animation: fadeIn_icon 4s ease forwards;
+    animation-delay: .5s;
 }
 
 .slideIn-vertical_text {
-    animation: slideIn-vertical_text 5s ease forwards;
-    animation-delay: 1.5s;
+    animation: slideIn-vertical_text 2s ease forwards;
 }
 
 .slideIn-vertical_text span{
@@ -917,3 +920,33 @@ svg {
     animation-delay: 1.5s;
 }
 
+@keyframes teaser_tiles_sub_text {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes teaser_tiles_header_text {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.teaser_tiles_sub_text {
+    animation: teaser_tiles_sub_text 1s ease forwards;
+}
+
+.teaser_tiles_header_text {
+    display: inline-block;
+    animation: teaser_tiles_header_text 1s ease forwards;
+}

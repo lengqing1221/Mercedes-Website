@@ -177,46 +177,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function default_Hero_text() {
     let hero_header = document.querySelector(".hero-header");
-    let hero_promotion = documnet.querySelector(".hero-promotion");
+    let hero_promotion = document.querySelector(".hero-promotion");
 
     hero_promotion.classList.add("slideIn_hero_sub_text");
     hero_header.classList.add("slideIn_vertical_text");
   }
   default_Hero_text();
+
+
   const teaser_tile_container_one = document.querySelector('.innovation-small__container');
   const teaser_tile_container_two = document.querySelector('.vehicles-small__container');
   const teaser_tile_container_three = document.querySelector('.innovation-large__container');
   const teaser_tile_container_four = document.querySelector('.art-extra-large__container');
   const teaser_tile_container_five = document.querySelector('.zeitgeist-medium__container');
+  const magazine_image_container = document.querySelector('.editorial-magazine-image-wrapper');
   
-  // Intersection Observer options
-  const teaser_tile_options = {
-    root: null, // Using null to observe relative to the viewport
-    rootMargin: "0px",
-    threshold: 0 // Trigger when any part of the element is visible
-  };
-  
-  // Callback function for intersection
-  function handleIntersection(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        console.log("Element is in view:", entry.target);
-        // Add any actions you want to perform when the element is in view
-        entry.target.classList.add("in-view"); // Example: Add a class for animation
-  
-        // Select child elements and add the class
-        const image_wrappers = entry.target.querySelectorAll('.teaser-tile-image-wrapper');
-        image_wrappers.forEach(image => {
-          image.classList.add('imageReveal_image');
-        });
-      }
-    });
-  }
-  
-  // Create the Intersection Observer
-  const observer = new IntersectionObserver(handleIntersection, teaser_tile_options);
-  
-  // Observe each teaser tile container
   const teaserTiles = [
     teaser_tile_container_one,
     teaser_tile_container_two,
@@ -225,9 +200,94 @@ document.addEventListener("DOMContentLoaded", () => {
     teaser_tile_container_five
   ];
   
+  // Intersection Observer options
+  const teaser_tile_Image_options = {
+    root: null, // Using null to observe relative to the viewport
+    rootMargin: "0px",
+    threshold: 0 // Trigger when any part of the element is visible
+  };
+  
+//  Intersection Observer option for magazine image
+  const magazineImage_option = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0
+  };
+
+  // Callback function for intersection
+  function handle_teaserTiles_Intersection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const image_wrapper = entry.target.querySelector('.teaser-tile-image-wrapper');
+        const header_text_container = entry.target.querySelector('.teaser-tiles-header');
+        const header_text = header_text_container.querySelector('span');
+        const sub_text = entry.target.querySelector('.teaser-tiles-subtext');
+        sub_text.classList.add('teaser_tiles_sub_text');
+        header_text_container.classList.add('teaser_tiles_header_text');
+        if (image_wrapper) {
+            console.log('this is not found');
+        }
+        image_wrapper.classList.add('imageReveal_image');
+      }
+    });
+  }
+  
+  function handle_magazineImage_Intersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          magazine_image_container.classList.add('imageReveal_image');
+        }
+      });
+  }
+
+  const magazine_text_wrapper = document.querySelector('.editorial-text-wrapper');
+
+  function handle_magazineText_Intersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const editorial_magazine = entry.target.querySelector('.editorial-magazine');
+          const editorial_magazine_header = entry.target.querySelector('.editorial-header-text');
+          const editorial_magazine_information = entry.target.querySelector('.editorial-more-information-wrapper');
+          editorial_magazine.classList.add('teaser_tiles_sub_text');
+          editorial_magazine_header.classList.add('teaser_tiles_header_text');
+          editorial_magazine_information.classList.add('slideIn_hero_sub_text');
+        }
+      });
+  }
+
+
+  // Create the Intersection Observer
+  const teaserTiles_observer = new IntersectionObserver(handle_teaserTiles_Intersection, teaser_tile_Image_options);
+  const magazineImage_observer = new IntersectionObserver(handle_magazineImage_Intersection, magazineImage_option);
+  const magazineText_observer = new IntersectionObserver(handle_magazineText_Intersection, magazineImage_option);
+//   Observe each teaser tile container
   teaserTiles.forEach(tile => {
     if (tile) {
-      observer.observe(tile);
+        teaserTiles_observer.observe(tile);
     }
   });
-});  
+  magazineImage_observer.observe(magazine_image_container);
+  magazineText_observer.observe(magazine_text_wrapper);
+
+  const social_media_content_wrapper = document.querySelector('.social-media-box-content-wrapper');
+  function handle_socialMedia_Intersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const social_media_header = entry.target.querySelector('.social-media-header');
+            if (social_media_header) {
+                console.log('this recorded');
+            }
+          const social_media_icons = entry.target.querySelector('.social-media-icons');
+          if (social_media_icons) {
+            console.log('this recorded');
+        }
+          social_media_header.classList.add('slideIn-vertical_text');
+          social_media_icons.classList.add('fadeIn_icon');
+        }
+      });
+  }
+  const socialMedia_observer = new IntersectionObserver(handle_socialMedia_Intersection, magazineImage_option);
+  socialMedia_observer.observe(social_media_content_wrapper);
+});
+
+  
