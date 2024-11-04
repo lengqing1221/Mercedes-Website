@@ -172,6 +172,7 @@
     width: 450px;
     color: white;
     font-weight: 50;
+    position: relative;
 }
 
 .hero-promotion {
@@ -179,6 +180,8 @@
     color: var(--main-text-color);
     font-size: 18px;
     font-weight: 50;
+    position: relative;
+    opacity: 0;
 }
 
 .discover_button {  
@@ -192,6 +195,7 @@
     justify-content: center;
     align-items: center;
     border: none;
+    opacity: 0;
 }
 
 .discover_button:hover {
@@ -383,6 +387,10 @@ svg {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
+}
+
+.teaser-tile-images:hover {
+    cursor: url('mousehover.svg') 16 16, auto;
 }
 
 .innovation-small__container img:nth-of-type(1) {
@@ -672,23 +680,21 @@ svg {
     }
 }
 
-@keyframes expand_center {
+@keyframes expand_main_navigation {
     from {
-        height: 65px;
-        font-size: 12px;
+        height: 55px;
     }
     to {
-        height: 90px;
-        font-size: 16px;
+        height: 80px;
     }
 }
 
-@keyframes shrink_center {
+@keyframes shrink_main_navigation {
     from {
         height: 80px;
     }
     to {
-        height: 65px;
+        height: 55px;
     }
 }
 
@@ -763,8 +769,8 @@ svg {
 }
 
 .slideIn-vertical_text {
-    animation: slideIn-vertical_text 1.2s ease forwards;
-    animation-delay: 1s;
+    animation: slideIn-vertical_text 5s ease forwards;
+    animation-delay: 1.5s;
 }
 
 .slideIn-vertical_text span{
@@ -855,19 +861,18 @@ svg {
     }
 }
 
-.expand_center {
-    animation: expand_center 1.4s ease forwards;
-    animation-delay: 2s;
+.expand_main-navigation {
+    animation: expand_main_navigation 1.4s ease forwards;
+    
 }
 
-.shrink_center {
-    animation: shrink_center 1.4s ease forwards;
+.shrink_main-navigation {
+    animation: shrink_main_navigation 1.4s ease forwards;
     animation-delay: 2s;
 }
 
 .slideIn-horizontal_text a{
     animation: slideIn-horizontal_text 1.2s ease forwards;
-    animation-iteration-count: infinite;
 }
 @keyframes slideIn-horizontal_text {
     from {
@@ -895,5 +900,20 @@ svg {
     animation: slideIn-vertical_navside 1.2s ease forwards;
 }
 
+@keyframes slideIn_hero_sub_text{
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slideIn_hero_sub_text {
+    animation: slideIn_hero_sub_text 4s linear forwards;
+    animation-delay: 1.5s;
+}
 
